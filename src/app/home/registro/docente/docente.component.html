@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+    <div class="col mt-3">
+      <mat-card>
+        <mat-card-header class="d-flex justify-content-center">
+          <mat-card-title>Registro de Usuario</mat-card-title>
+        </mat-card-header>
+
+        <!-- FORMULARIO DE REGISTRO -->
+        <form [formGroup]="rForm" (ngSubmit)="addUsuario(rForm.value)">
+			<div *ngIf="message">
+				<div class="error-r w-100 text-center p-3 mt-3" *ngIf="error">
+					<span >{{message}}</span>
+				</div>
+				<div class="error-v w-100 text-center p-3 mt-3" *ngIf="!error">
+					<span >{{message}}</span>
+				</div>
+			</div>
+			<!-- CAMPOS -->
+        	<div class="row p-3">
+
+	        	<!-- USUARIO -->
+		        <mat-form-field class="col-4 mt-3" hintLabel="Minimo de 5 caracteres">
+		            <input formControlName="usuario" matInput #input minlength="5" placeholder="Usuario">
+		            <mat-hint align="end">{{input.value?.length || 0}}/5</mat-hint>
+		        </mat-form-field>
+		        <!-- PASSWORD -->
+		        <mat-form-field class="col-4 mt-3" hintLabel="Minimo de 7 caracteres">
+		            <input formControlName="password" type="password" matInput #input1 placeholder="Contraseña">
+		            <mat-hint align="end">{{input1.value?.length || 0}}/7</mat-hint>
+		        </mat-form-field>
+		        <!-- REPEAT PASSWORD -->
+		         <mat-form-field class="col-4 mt-3" hintLabel="Minimo de 7 caracteres">
+		            <input formControlName="passwordr" type="password" matInput #input minlength="7" placeholder="Repetir Contraseña">
+		            <mat-hint align="end">{{input.value?.length || 0}}/7</mat-hint>
+		        </mat-form-field>
+		        <mat-form-field class="col-4 mt-3">
+		            <mat-select placeholder="Tipo de Usuario" formControlName="tipo">
+		              <mat-option value="{{tipo.title}}" *ngFor="let tipo of type">{{tipo.title}}</mat-option>
+		            </mat-select>
+		            <mat-hint align="end">Seleccione que Tipo</mat-hint>
+		        </mat-form-field>
+			</div>
+
+			<mat-card-actions class="d-flex justify-content-center mt-4">
+			    <button mat-raised-button color="primary" type="submit" [disabled]="!rForm.valid">Guardar</button>
+			</mat-card-actions>
+        </form>
+      </mat-card>
+    </div>
+  </div>
+</div>

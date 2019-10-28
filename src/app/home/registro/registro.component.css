@@ -1,0 +1,49 @@
+mat-card {
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+  /*SOMBREADO*/
+  -webkit-box-shadow: inset 4px 10px 135px -56px rgba(0, 0, 0, 0.59) !important;
+  -moz-box-shadow: inset 4px 10px 135px -56px rgba(0, 0, 0, 0.59) !important;
+  box-shadow: inset 4px 10px 135px -56px rgba(0, 0, 0, 0.59) !important;
+  /*BORDER*/
+  border-radius: 10px 10px 10px 10px !important;
+  -moz-border-radius: 10px 10px 10px 10px !important;
+  -webkit-border-radius: 10px 10px 10px 10px !important;
+  border: 0px solid #000000 !important;
+
+}
+
+mat-card:hover {
+  filter: opacity(.5);
+}
+
+mat-card mat-icon {
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+  color: white;
+  transition: all 0.4s ease-in;
+}
+
+mat-card:hover mat-icon {
+  -webkit-transform: scale(2.3);
+  transform: scale(2.3);
+  transition: all 0.4s ease-in;
+}
+
+.azul {
+  background: #0d0899;
+}
+
+.verde {
+  background: green;
+}
+
+.amarillo {
+  background: yellow;
+}
+
+.rojo {
+  background: red;
+}

@@ -1,0 +1,38 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  width: 100%;
+}
+
+form {
+	border-top: 3px solid #0d0d8f;
+}
+
+.b-bottom{
+	border-bottom: 1px solid #ccc;
+}
+
+.b-top{
+	border-top: 1px solid #ccc;
+}
+
+.error-r{
+	color: white;
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	border: 0px solid #eb4949;
+	background: rgba(230,21,21,.5);
+}
+
+.error-v{
+	color: white;
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	border: 0px solid #eb4949;
+	background: rgba(18,186,29,.5);
+}

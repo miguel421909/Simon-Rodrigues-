@@ -1,0 +1,49 @@
+<!-- MENU HORIZONTAL PRINCIPAL -->
+<mat-toolbar color="primary">
+  <button type="button" mat-button (click)="drawer.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button> 
+  <span class="fill-remaining-space">Application Title</span>
+  <span class="fill-remaining-space ml-auto">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" [overlapTrigger]="false">
+      <button mat-menu-item>
+        <mat-icon>people_outline</mat-icon>
+        <span>Connecting</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Logout</span>
+      </button>
+    </mat-menu>
+  </span>
+</mat-toolbar>
+
+<mat-drawer-container class="example-container" autosize>
+  
+  <!-- CONTENEDOR DEL MENU LATERAL -->
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <mat-accordion class="example-headers-align">
+      <mat-expansion-panel hideToggle *ngFor="let item of links;">
+        <mat-expansion-panel-header [routerLink]="[item.route]">
+          <!-- TITULO -->
+          <mat-panel-title>
+            {{item.title}}
+          </mat-panel-title>
+          <!-- ICONO -->
+          <mat-panel-description>
+            <mat-icon class="d-flex justify-content-end ml-auto">{{item.icon}}</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-drawer>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="example-sidenav-content">
+    <router-outlet></router-outlet>
+  </div>
+
+</mat-drawer-container>
